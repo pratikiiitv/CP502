@@ -4,6 +4,7 @@ Let there be some light!
 Quick introduction of participants
 Broad Idea about the Program
 Program Structure and Schedule
+https://docs.google.com/spreadsheets/d/1OWJKATapPSVm--0KP5njE4usdZ11Lku2djIwMele7-I/edit?usp=sharing
 Expectations?
 
 Story of halwai making laddoos
@@ -77,8 +78,8 @@ Node_under_cons         Frontier(FIFO)          Visited
                         [[0,5,3],2,[3,5,0]]
                         [[3,2,3],2,[3,5,0]]
 
-Flatland - Romance of many dimensions
-Edwin Abott
-
 GIT: pratikiiitv/CP502
 three_jugs_bfs.py
+
+Flatland - Romance of many dimensions
+Edwin Abott
