@@ -1,5 +1,6 @@
 9/3/2026
 
+Let there be some light!
 Quick introduction of participants
 Broad Idea about the Program
 Program Structure and Schedule
