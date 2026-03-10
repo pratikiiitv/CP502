@@ -14,7 +14,7 @@ def get_successors(state):
     successors = []
     missionaries, cannibals, boat = state
     if boat == 1:
-        moves = [(2, 0), (0, 2), (1, 1), (1, 0), (0, 1)]
+        moves = [(1, 1), (1, 0), (0, 1), (2, 0), (0, 2) ]
         for move in moves:
             new_state = (missionaries - move[0], cannibals - move[1], 0)
             if is_valid(new_state):
@@ -27,7 +27,7 @@ def get_successors(state):
                 successors.append(new_state)
     return successors
 
-def bfs(start_state, goal_state):
+def agent(start_state, goal_state):
     queue = deque([(start_state, [])])
     visited = set()
     while queue:
@@ -45,7 +45,7 @@ def bfs(start_state, goal_state):
 start_state = (3, 3, 1)
 goal_state = (0, 0, 0)
 
-solution = bfs(start_state, goal_state)
+solution = agent(start_state, goal_state)
 if solution:
     print("Solution found:")
     for step in solution:

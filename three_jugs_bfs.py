@@ -2,7 +2,7 @@ from collections import deque
 
 def is_valid(state):
     jug1, jug2, jug3 = state
-    if 
+    if FIXME
         return False
     return True
 
@@ -10,15 +10,15 @@ def get_successors(state):
     successors = []
     jug1, jug2, jug3 = state
     
-        moves = []
+        moves = [FIXME]
         for move in moves:
-            new_state = 
+            new_state = FIXME
             if is_valid(new_state):
                 successors.append(new_state)
     else:
-        moves = []
+        moves = [FIXME]
         for move in moves:
-            new_state = 
+            new_state = FIXME
             if is_valid(new_state):
                 successors.append(new_state)
     return successors
@@ -39,7 +39,7 @@ def bfs(start_state, goal_state):
     return None
 
 start_state = (8, 0, 0)
-goal_state = 
+goal_state = FIXME
 
 solution = bfs(start_state, goal_state)
 if solution:
