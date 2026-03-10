@@ -1,4 +1,4 @@
-9/3/2026
+9-11/3/2026
 
 Let there be some light!
 Quick introduction of participants
@@ -11,8 +11,7 @@ Story of halwai making laddoos
 Progression of a sequence 1 2 3 4 ... to 2^n
 
 Reality check
-Information consumes attention (may be the measure of information can be defined
-attention that it consumes rather than the entropic one!)
+Information consumes attention (may the measure of information be defined in terms of the attention that it consumes rather than the entropic one!)
 
 There will be interesting exercises and coding problems but beware!
 ChatGPT Example:
@@ -83,3 +82,36 @@ three_jugs_bfs.py
 
 Flatland - Romance of many dimensions
 Edwin Abott
+
+is_valid() : {state} -> {Y/N}
+get_successors() : {state} -> {successor states}
+bfs() : {start_state, goal_state} -> {{},path}
+
+AGENT                       ENVIRONMENT (PROBLEM)
+                            is_valid()
+                            get_successors()
+bfs()
+
+Agent has access to the problem/ graph via successor function only!
+Init_state
+Push(Init_state, Frontier)
+Node <- Pop(Frontier)
+
+Is Frontier Empty? ----> No solution
+bool Is_Goal(Node.state)
+                            List <- get_successors(Node.state)
+Pick one Node from the list
+Node.state is visited?
+Node.state is in Frontier?
+Replace/Keep Node
+Frontier <- Push(Node, Frontier)
+...
+Node <- Pop(Frontier)
+
+Missionaries and Cannibals
+State representation : (M=3,C=3,L=1/R=0)
+is_valid(state)
+    # M > C 
+    # M, C <= 3
+    # M, C >= 0
+get_successor(state)
