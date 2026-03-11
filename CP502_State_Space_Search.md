@@ -132,6 +132,51 @@ get_successor(state)
 (B, 100),
 (O, 40),
 (F, 50),
-
 }
+
+Matrix ??
+A = [1 2 3; 4 5 6; 7 8 9]
+A 3x3
+
+A = [1 2 3 4 5 6 7 8 9]
+A(0) = 1 ---> (0,0)
+A(5) = 6 ---> (1,2)
+A(8) = 9 ---> (2,2)
+
+[1 2 3 4 5 6 7 0 8]
+    [1 2 3 4 5 6 7 8 0]
+    [1 2 3 4 5 6 0 7 8]
+    [1 2 3 4 0 6 7 5 8]
+
+[1 0 2 3 4 5 6 7 8]
+index = 1 for value 0
+
+AGENT - Aeger - todo
+ENVIRONMENT - Problem
+
+--------------------                ____________   
+|                   |               |           |      
+|       Init        |----------->   |           |
+| ENV   Goal_Test   |<---------->   |   AGENT   |
+|       Successor   |<---------->   | BFS/DFS   |
+|                   |               | A*, etc   |
+--------------------                ------------    
+
+a = 2
+b = 3
+temp = a
+a = b
+b = temp 
+
+a = 3
+b = 2
+a = a + b   = 5
+b = a - b   = 3  
+a = a - b   = 2
+
+Branching Factor of a Tree
+4 - 2
+1 - 4
+4 - 3
+Avg Moves = (8 + 4 + 12)/9 = 24/9 = 2.7
 

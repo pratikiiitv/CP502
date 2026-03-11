@@ -20,13 +20,13 @@ class Node:
         self.h = h # estimated distance to goal
         self.f = g + h # evaluation function
     def __lt__(self, other):
-        return self.g < other.g
+        return self.f < other.f
 
 def heuristic(node, goal_state):
     h = 0
     return h
 
-def get_successors(node):
+def get_successors(node): #FIXME (why node?)
     successors = []
     value = 0
     index = node.state.index(0)
@@ -41,7 +41,7 @@ def get_successors(node):
         moves = [-3]
     # Column constrained moves
     if remainder == 0:
-        moves += [1]
+        moves += [1] # moves = moves + [1]
     if remainder == 1:
         moves += [-1, 1]
     if remainder == 2:
@@ -56,7 +56,7 @@ def get_successors(node):
             new_state[im] = new_state[index]
             new_state[index] = temp
             successor = Node(new_state, node, node.g+1)
-            # print(successor.g)
+            # print(successor.g) FIXME
             successors.append(successor)            
     return successors
 
@@ -65,8 +65,8 @@ def search_agent(start_state, goal_state):
     goal_node = Node(goal_state)
     # queue = deque([start_node])
     frontier = []
-    heapq.heappush(frontier, (start_node.g, start_node))
-    # Push start_node to frontier (priority queue) with priority on "g"
+    heapq.heappush(frontier, (start_node.f, start_node))
+    # Push start_node to frontier (priority queue) with priority on "f"
     visited = set()
     nodes_explored = 0
     
@@ -87,8 +87,8 @@ def search_agent(start_state, goal_state):
             return path[::-1]
         for successor in get_successors(node):
             # queue.append(successor)
-            # push scucessor with updated "g" value in frontier
-            heapq.heappush(frontier, (successor.g, successor))
+            # push scucessor with updated "f" value in frontier
+            heapq.heappush(frontier, (successor.f, successor))
     # print('Total nodes explored', nodes_explored)
     return None
 
@@ -96,13 +96,14 @@ start_state = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 s_node = Node(start_state)
 # goal_state = [1, 2, 3, 4, 5, 0, 7, 8, 6]
 
-D = 20
+D = 200
 d = 0
 while d <= D:
     goal_state = random.choice(list(get_successors(s_node))).state
     s_node = Node(goal_state)
     d = d+1
-    # print(goal_state)
+
+print(goal_state)
 
 solution = search_agent(start_state, goal_state)
 if solution:
