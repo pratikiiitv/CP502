@@ -17,7 +17,7 @@ class Node:
         self.state = state
         self.parent = parent
         self.g = g # distance to root
-        self.h = # estimated distance to goal
+        self.h = h # estimated distance to goal
         self.f = g + h # evaluation function
     def __lt__(self, other):
         return self.g < other.g
@@ -56,7 +56,7 @@ def get_successors(node):
             new_state[im] = new_state[index]
             new_state[index] = temp
             successor = Node(new_state, node, node.g+1)
-            print(successor.g)
+            # print(successor.g)
             successors.append(successor)            
     return successors
 
