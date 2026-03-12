@@ -180,3 +180,10 @@ Branching Factor of a Tree
 4 - 3
 Avg Moves = (8 + 4 + 12)/9 = 24/9 = 2.7
 
+A heuristic function that never overestimates the actual 
+distance to goal, such a heuristic is said to be admissible.
+
+If h is admissible, then f(n) = g(n) + h(n) gives 
+optimal path!!!
+
+A-star
